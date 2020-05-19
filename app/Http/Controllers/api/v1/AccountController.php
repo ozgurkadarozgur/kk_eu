@@ -40,7 +40,7 @@ class AccountController extends Controller
                 $code = $code = rand(100000, 999999);;
                 $player->phone_code = $code;
                 $player->save();
-                $message = 'KAFAKAFAYA SMS KODU '. $code . '.';
+                $message = 'KAFAKAFAYA SMS CODE '. $code . '.';
                 SendSMSJob::dispatch($player->phone, $message);
             }
             return response()->json([
@@ -53,7 +53,7 @@ class AccountController extends Controller
         } else {
             return response()->json([
                 'status' => 'error',
-                'message' => 'Bilgilerinizi kontrol ederek tekrar giriş yapın.'
+                'message' => 'Invalid email or password.'
             ], Response::HTTP_BAD_REQUEST);
         }
     }
@@ -103,7 +103,7 @@ class AccountController extends Controller
         } else {
             return response()->json([
                 'status' => 'error',
-                'message' => 'Hatalı kod girdiniz.'
+                'message' => 'Invalid code'
             ], Response::HTTP_BAD_REQUEST);
         }
     }
@@ -117,7 +117,7 @@ class AccountController extends Controller
         if ($result) {
             $player = $this->playerRepository->findByEmail($email);
             $url = route('api.player.reset_password_view', $token);
-            $message = 'Şifrenizi değiştirmek için tıklayın '. $url;
+            $message = 'Click to reset password '. $url;
             SendSMSJob::dispatch($player->phone, $message);
             return response()->json([
                 'status' => 'success',
@@ -125,7 +125,7 @@ class AccountController extends Controller
         } else {
             return response()->json([
                 'status' => 'error',
-                'message' => 'Bir hata oluştu lütfen daha sonra deneyin.'
+                'message' => 'Please try again later.'
             ], Response::HTTP_BAD_REQUEST);
         }
     }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>KAFA KAFAYA | ŞİFRE DEĞİŞTİR</title>
+    <title>KAFA KAFAYA | RESET PASSWORD</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -24,14 +24,14 @@
         <div class="card-body">
             @if($status == "success")
                 <div class="alert alert-success alert-dismissible">
-                    <h5><i class="icon fas fa-check"></i> Başarılı!</h5>
-                    Şifreniz başarıyla değiştirildi!
+                    <h5><i class="icon fas fa-check"></i> Success!</h5>
+                    Your password has changed successfully!
                 </div>
             @endif
             @if($status == "error")
                     <div class="alert alert-danger alert-dismissible">
-                        <h5><i class="icon fas fa-ban"></i> Hata!</h5>
-                        Hatalı token.
+                        <h5><i class="icon fas fa-ban"></i> Error!</h5>
+                        Invalid token.
                     </div>
             @endif
         </div>

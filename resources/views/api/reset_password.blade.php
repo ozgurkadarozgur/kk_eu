@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>KAFA KAFAYA | Şifre Değiştir</title>
+    <title>KAFA KAFAYA | RESET PASSWORD</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -25,12 +25,12 @@
     <div class="card">
         <div class="card-body login-card-body">
             <p class="login-box-msg">
-                Şifreni değiştir.
+                Reset your password.
             </p>
             <form action="{{ route('api.player.reset_password', $token) }}" method="post">
                 @csrf
                 <div class="input-group mb-3">
-                    <input type="password" name="new_password" class="form-control {{ $errors->has('new_password') ? 'is-invalid' : '' }}" placeholder="Yeni Şifre">
+                    <input type="password" name="new_password" class="form-control {{ $errors->has('new_password') ? 'is-invalid' : '' }}" placeholder="New Password">
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-lock"></span>
@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <div class="input-group mb-3">
-                    <input type="password" name="new_password_confirmation" class="form-control {{ $errors->has('new_password_confirmation') ? 'is-invalid' : '' }}" placeholder="Şifreni Doğrula">
+                    <input type="password" name="new_password_confirmation" class="form-control {{ $errors->has('new_password_confirmation') ? 'is-invalid' : '' }}" placeholder="Confirm newp password">
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-lock"></span>
@@ -53,7 +53,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <button type="submit" class="btn btn-primary btn-block">Şifreni Değiştir</button>
+                        <button type="submit" class="btn btn-primary btn-block">Reset</button>
                     </div>
                     <!-- /.col -->
                 </div>

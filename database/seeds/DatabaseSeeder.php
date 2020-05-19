@@ -12,12 +12,13 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            //UsersTableSeeder::class,
-            //CitiesTableSeeder::class,
-            //DistrictsTableSeeder::class,
-            //PlayerPositionsTableSeeder::class,
-            //VSStatusTableSeeder::class,
-            //PlayersTableSeeder::class,
+            UsersTableSeeder::class,
+            CitiesTableSeeder::class,
+            DistrictsTableSeeder::class,
+            PlayerPositionsTableSeeder::class,
+            SkillsTableSeeder::class,
+            VSStatusTableSeeder::class,
+            PlayersTableSeeder::class,
             //TeamsTableSeeder::class,
             //EliminationApplicationsTableSeeder::class,
             //LeagueApplicationsTableSeeder::class,
